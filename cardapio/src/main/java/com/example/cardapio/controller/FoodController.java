@@ -6,7 +6,6 @@ import com.example.cardapio.food.FoodRequestDTO;
 import com.example.cardapio.food.FoodResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -16,7 +15,8 @@ public class FoodController {
     @Autowired
 private FoodRepository repository;
 
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @CrossOrigin(origins = "http://localhost:5173")
+
     @PostMapping
 public void saveFood(@RequestBody FoodRequestDTO data){
         Food foodData = new Food(data);
